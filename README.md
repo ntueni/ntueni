@@ -9,7 +9,8 @@ I contribute to the BRAINIACS group's shared simulation code: a C++ finite-eleme
 
 ###  Reaction–diffusion tumor growth in brain tissue — C++ / deal.II
 [efi-growth-diffusion-reaction · branch main](https://github.com/BRAINIACS-Group/efi-growth-diffusion-reaction)
-Couples a reaction–diffusion model of tumor cell concentration (explicit finite-volume diffusion with logistic proliferation) to nonlinear brain mechanics. The concentration drives an accumulated growth field that enters the mechanics through a multiplicative split F = F_e · F_g, deforming and stressing the surrounding tissue, which is modelled with a region-wise modified one-term Ogden material. Exports concentration, growth, displacement and stress fields (hydrostatic, von Mises) for ParaView.
+[efi-growth-diffusion-reaction · branch image-driven-growth](https://github.com/BRAINIACS-Group/efi-growth-diffusion-reaction/tree/image-driven-growth)
+Couples tumor cell concentration to nonlinear brain mechanics through an accumulated growth field and a multiplicative split F = F_e · F_g, which deforms and stresses the surrounding tissue (region-wise modified one-term Ogden material). On main, the concentration comes from a reaction–diffusion model (explicit finite-volume diffusion with logistic proliferation). On image-driven-growth, it is read from a NIfTI time series registered to the mesh, one image per time step, which allows to simulate patient-specific tumor evolution. Both versions are verified against analytical and synthetic test cases, and export concentration, growth, displacement and stress fields (hydrostatic, von Mises) for ParaView.
 
 ### FA-based heterogeneous brain tissue — C++ / deal.II
 [`EFI_atrophy_and_tumor` · branch `atrophy_FA_integration`](https://github.com/BRAINIACS-Group/EFI_atrophy_and_tumor/tree/atrophy_FA_integration)
